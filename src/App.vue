@@ -14,17 +14,14 @@ export default {
   data() {
     return {
       titulo: 'Alurapic',
-      fotos: [
-        {
-          url: 'https://www.petz.com.br/blog/wp-content/uploads/2019/04/como-saber-se-o-cachorro-esta-com-febre-doencas.jpg',
-          titulo: 'cachorro'
-        },
-        {
-          url: 'https://www.petz.com.br/blog/wp-content/uploads/2019/04/como-saber-se-o-cachorro-esta-com-febre-doencas.jpg',
-          titulo: 'cachorro2'
-        }
-      ]
+      fotos: []
     }
+  },
+
+  created() {
+    let promise = this.$http.get('http://localhost:3000/v1/fotos')
+      .then(res => res.json())
+      .then(fotos => this.fotos = fotos, err => console.log(err))
   }
 }
 </script>
