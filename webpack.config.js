@@ -15,12 +15,12 @@ module.exports = {
         use: [
           'vue-style-loader',
           'css-loader'
-        ],
+        ]
       },      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
+         loaders: {
           }
           // other vue-loader options go here
         }
